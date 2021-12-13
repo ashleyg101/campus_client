@@ -4,7 +4,14 @@ import { Link } from "react-router-dom";
 const AllCampusesView = (props) => {
   const {campus, deleteCampus} = props;
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return (
+    <div>
+      <h1>There are no campuses.</h1>
+    <Link to={`/newcampus`}>
+      <button>Add New Campus</button>
+    </Link>
+    </div>
+    )
   }
 
   return (
