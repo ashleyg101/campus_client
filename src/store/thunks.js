@@ -23,6 +23,15 @@ export const addCampusThunk = (campus) => async (dispatch) => {
   }
 };
 
+export const deleteCampusThunk = id => async dispatch => {
+  try {
+    await axios.delete(`/api/campuses/${id}`);
+    //delete succesful so change state with dispatch
+    dispatch(ac.deleteCampus(id));
+  } catch(err) {
+    console.error(err);
+  }
+};
 //Single campus
 export const fetchCampusThunk = (id) => async (dispatch) => {
   // thunk creator would not an be async function 
