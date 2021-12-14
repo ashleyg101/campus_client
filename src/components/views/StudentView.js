@@ -11,7 +11,6 @@ const StudentView = (props) => {
       </Link>
     </div>
   );
-
 };
 
 export default StudentView;
