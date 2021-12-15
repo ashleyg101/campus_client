@@ -23,6 +23,11 @@ const CampusView = (props) => {
       <Link to={`/campuses`}>
       <button onClick={() => deleteCampus(campus.id)}>Delete</button>
       </Link>
+      <br/>
+      <br/>
+      <Link to={`/campuses`}><button>Back to All Campuses</button></Link>
+      <br/>
+      <Link to={`/`}><button>Back to Home</button></Link>
     </div>
   );
 
