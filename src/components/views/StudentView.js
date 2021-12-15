@@ -9,6 +9,11 @@ const StudentView = (props) => {
       <Link to={`/campus/${student.campus.id}`}>
         {student.campus.name}
       </Link>
+      <br/>
+      <br/>
+      <Link to={`/students`}><button>Back to All Students</button></Link>
+      <br/>
+      <Link to={`/`}><button>Back to Home</button></Link>
     </div>
   );
 };

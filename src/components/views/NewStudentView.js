@@ -1,5 +1,6 @@
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
 
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -66,6 +67,11 @@ const NewStudentView = (props) => {
           <br/>
         </form>
         </div>
+        <br/>
+        <br/>
+        <Link to={`/students`}><button>Back to All Students</button></Link>
+        <br/>
+        <Link to={`/`}><button>Back to Home</button></Link>
       </div>
     
   )
