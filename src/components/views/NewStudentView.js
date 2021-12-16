@@ -56,7 +56,7 @@ const NewStudentView = (props) => {
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-          <input type="text" name="email" onChange={(e) => handleChange(e)} />
+          <input type="email" name="email" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
@@ -66,7 +66,7 @@ const NewStudentView = (props) => {
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
-          <input type="text" name="gpa" onChange={(e) => handleChange(e)} />
+          <input type="number" name="gpa" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
