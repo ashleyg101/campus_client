@@ -1,17 +1,24 @@
 import { Link } from "react-router-dom";
-import { fetchCampus } from "../../store/actions/actionCreators";
+import { deleteStudent, fetchCampus } from "../../store/actions/actionCreators";
 const StudentView = (props) => {
-  const { student } = props;
+  const { student, deleteStudent } = props;
   return (
     <div>
       <h1>{student.firstname + " " + student.lastname}</h1>
       <p>{student.email}</p>
       <p>GPA: {student.gpa}</p>
-      {/* <h3>{student.campus.name}</h3> */}
       <Link to={`/campus/${student.campus.id}`}>
         {student.campus.name}
       </Link>
+      }
+      {student.campus === null &&
+      <h3>Student is not Enrolled in a Campus</h3>
+      }
       <br/>
+      <br/>
+      <Link to={`/students`}>
+      <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
+      </Link>
       <br/>
       <Link to={`/students`}><button>Back to All Students</button></Link>
       <br/>
