@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { fetchCampus } from "../../store/actions/actionCreators";
+import { deleteStudent, fetchCampus } from "../../store/actions/actionCreators";
 const StudentView = (props) => {
-  const { student } = props;
+  const { student, deleteStudent } = props;
   return (
     <div>
       <h1>{student.firstname + " " + student.lastname}</h1>
@@ -10,6 +10,10 @@ const StudentView = (props) => {
         {student.campus.name}
       </Link>
       <br/>
+      <br/>
+      <Link to={`/students`}>
+      <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
+      </Link>
       <br/>
       <Link to={`/students`}><button>Back to All Students</button></Link>
       <br/>
