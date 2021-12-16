@@ -11,6 +11,7 @@ class NewCampusContainer extends Component {
         super(props);
         this.state = {
           name: "", 
+          imageURL: "",
           address: "",
           description: null,
           redirect: false, 
@@ -29,6 +30,7 @@ class NewCampusContainer extends Component {
 
         let campus = {
             name: this.state.name,
+            imageURL: this.state.imageURL,
             address: this.state.address,
             description: this.state.description,
         };
@@ -37,6 +39,7 @@ class NewCampusContainer extends Component {
 
         this.setState({
           name: "", 
+          imageURL: "",
           address: null,
           description: null,
           redirect: true, 
