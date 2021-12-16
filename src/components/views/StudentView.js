@@ -10,7 +10,6 @@ const StudentView = (props) => {
       <Link to={`/campus/${student.campus.id}`}>
         {student.campus.name}
       </Link>
-      }
       {student.campus === null &&
       <h3>Student is not Enrolled in a Campus</h3>
       }
