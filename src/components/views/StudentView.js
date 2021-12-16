@@ -7,9 +7,11 @@ const StudentView = (props) => {
       <h1>{student.firstname + " " + student.lastname}</h1>
       <p>{student.email}</p>
       <p>GPA: {student.gpa}</p>
+      {student.campus != null &&
       <Link to={`/campus/${student.campus.id}`}>
         {student.campus.name}
       </Link>
+      }
       {student.campus === null &&
       <h3>Student is not Enrolled in a Campus</h3>
       }
