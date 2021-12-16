@@ -11,7 +11,7 @@ class NewCampusContainer extends Component {
         super(props);
         this.state = {
           name: "", 
-          imageURL: "",
+          imageURL: "https://www.thoughtco.com/thmb/jfIJE14e4c4SbCw2ozOiTijzijQ=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/swarthmore-college-Eric-Behrens-flickr-5706ffe35f9b581408d48cb3.jpg",
           address: "",
           description: null,
           redirect: false, 
