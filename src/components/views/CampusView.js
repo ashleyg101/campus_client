@@ -20,6 +20,11 @@ const CampusView = (props) => {
       <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
       <h3>{campus.description}</h3>
       <p>There are no students at this campus.</p>
+      <br/>
+      <Link to={`/editcampus` + `/` + campus.id}>
+      <button>Edit Campus</button>
+      </Link>
+      <br/>
       <Link to={`/campuses`}>
       <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
       </Link>
