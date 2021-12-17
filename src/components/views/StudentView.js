@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles( () => ({
   image:{  
-    width: '500px',
-    height: '500px'
+    width: '300px',
+    height: '300px'
   }
   
 }));
