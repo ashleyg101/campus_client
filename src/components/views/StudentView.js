@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { deleteStudent, fetchCampus } from "../../store/actions/actionCreators";
-
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles( () => ({
@@ -16,7 +14,7 @@ const StudentView = (props) => {
   return (
     <div>
       <h1>{student.firstname + " " + student.lastname}</h1>
-      <img src={student.imageUrl} alt="Student profile image" className={classes.image}/>
+      <img src={student.imageUrl} alt="Student profile" className={classes.image}/>
       <br></br>
       <p>{student.email}</p>
       <p>GPA: {student.gpa}</p>
@@ -31,7 +29,7 @@ const StudentView = (props) => {
 
       <br/>
       <br/>
-      <Link to={`/editstudent` + `/` + student.id}>
+      <Link to={`/editstudent/` + student.id}>
       <button>Edit Student</button>
       </Link>
       <br/>

@@ -10,7 +10,7 @@ const useStyles = makeStyles( () => ({
 }));
 
 const AllCampusesView = (props) => {
-  const {campus, deleteCampus} = props;
+  const {deleteCampus} = props;
   const classes = useStyles();
   if (!props.allCampuses.length) {
     return (
