@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CampusView = (props) => {
-  const {campus, deleteCampus} = props;
+  const {campus, deleteCampus, deleteStudent} = props;
   
   if (!campus.students.length) {
     return (
@@ -10,7 +10,7 @@ const CampusView = (props) => {
       <p>{campus.description}</p>
       <h3>There are no students at this campus.</h3>
       <Link to={`/campuses`}>
-      <button onClick={() => deleteCampus(campus.id)}>Delete</button>
+      <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
       </Link>
       <br/>
       <br/>
@@ -34,13 +34,17 @@ const CampusView = (props) => {
           <Link to={`/student/${student.id}`}>
           {name}
           </Link>
+          <br/>
+          <Link to={`/students`}>
+          <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
+          </Link>
           </li>
           </div>
         );
       })}
       </ul>
       <Link to={`/campuses`}>
-      <button onClick={() => deleteCampus(campus.id)}>Delete</button>
+      <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
       </Link>
       <br/>
       <br/>
