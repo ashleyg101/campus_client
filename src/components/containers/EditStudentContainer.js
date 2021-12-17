@@ -21,6 +21,16 @@ class EditStudentContainer extends Component {
 
     componentDidMount() {
         this.props.fetchStudent(window.location.pathname.slice(-1));
+
+        this.setState({
+          firstname: this.props.student.firstname,
+          lastname: this.props.student.lastname,
+          email: this.props.student.email,
+          gpa: this.props.student.gpa,
+          campusId: this.props.student.campusId,
+          redirect: false, 
+          redirectId: null
+        })
     }
  
     handleChange = event => {

@@ -21,6 +21,16 @@ class EditCampusContainer extends Component {
 
     componentDidMount() {
         this.props.fetchCampus(window.location.pathname.slice(-1));
+
+        this.setState({
+          name: this.props.campus.name,
+          imageUrl:this.props.campus.imageUrl,
+          address: this.props.campus.address,
+          description: this.props.campus.description,
+          redirect: false, 
+          redirectId: null,
+          id: this.props.campus.id
+        })
     }
 
     handleChange = event => {
