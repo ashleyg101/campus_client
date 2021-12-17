@@ -3,15 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles( () => ({
   image:{  
-    width: '500px',
-    height: '400px'
+    width: '100px',
+    height: '100px'
   }
 }));
 
 const AllStudentsView = (props) => {
   const {students, deleteStudent} = props;
   const classes = useStyles();
-  
+
   if (!students.length) {
     return (
     <div>
