@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { deleteStudent } from "../../store/actions/actionCreators";
 import { EditStudentView } from '../views';
 import { addStudentThunk, fetchStudentThunk, editStudentThunk, deleteStudentThunk } from '../../store/thunks';
 
@@ -23,7 +22,6 @@ class EditStudentContainer extends Component {
     componentDidMount() {
         this.props.fetchStudent(window.location.pathname.slice(-1));
     }
-
  
     handleChange = event => {
       this.setState({
@@ -34,17 +32,18 @@ class EditStudentContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
 
-        console.log(this.props.student.firstname);
-        let student = {
-            firstname: this.props.student.firstname,
-            lastname: this.props.student.lastname,
-            email: this.props.student.email,
-            gpa: this.props.student.gpa,
-            campusId: this.props.student.campusId,
+        let editedStudent = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            gpa: this.state.gpa,
+            campusId: this.state.campusId,
             id: window.location.pathname.slice(-1)
         };
         
-        await this.props.editStudent(student);
+        console.log(editedStudent.firstname);
+
+        await this.props.editStudent(editedStudent);
 
         this.setState({
           firstname: "", 

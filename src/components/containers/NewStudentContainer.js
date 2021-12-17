@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import NewStudentView from '../views/NewStudentView';
-import { addStudentThunk } from '../../store/thunks';
+import { addStudentThunk, editStudentThunk } from '../../store/thunks';
 
 
 class NewStudentContainer extends Component {
@@ -70,6 +70,7 @@ class NewStudentContainer extends Component {
 const mapDispatch = (dispatch) => {
     return({
         addStudent: (student) => dispatch(addStudentThunk(student)),
+        editStudent: (student) => dispatch(editStudentThunk(student)),
     })
 }
 
