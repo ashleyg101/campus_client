@@ -33,7 +33,7 @@ const useStyles = makeStyles( () => ({
 }));
 
 const NewStudentView = (props) => {
-  const {handleChange, handleSubmit } = props;
+  const { handleChange, handleSubmit } = props;
   const classes = useStyles();
 
   return (

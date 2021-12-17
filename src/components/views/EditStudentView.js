@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 
 import { makeStyles } from '@material-ui/core/styles';
-import { student } from '../../store/reducers';
 
 
 const useStyles = makeStyles( () => ({
@@ -34,7 +33,7 @@ const useStyles = makeStyles( () => ({
 }));
 
 const EditStudentView = (props) => {
-  const {handleChange, handleSubmit } = props;
+  const { handleChange, handleSubmit } = props;
   const classes = useStyles();
 
   return (
@@ -47,27 +46,27 @@ const EditStudentView = (props) => {
         </div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
           <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-          <input type="text" name="firstname" onChange ={(e) => handleChange(e)} value= {student.firstname}/>
+          <input type="text" name="firstname" onChange ={(e) => handleChange(e)} defaultValue={props.student.firstname}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-          <input type="text" name="lastname" onChange={(e) => handleChange(e)} value={student.lastname}/>
+          <input type="text" name="lastname" onChange={(e) => handleChange(e)} defaultValue={props.student.lastname}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-          <input type="email" name="email" onChange={(e) => handleChange(e)} value={student.email}/>
+          <input type="email" name="email" onChange={(e) => handleChange(e)} defaultValue={props.student.email}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>campusId: </label>
-          <input type="text" name="campusId" onChange={(e) => handleChange(e)} value={student.campusId}/>
+          <input type="text" name="campusId" onChange={(e) => handleChange(e)} defaultValue={props.student.campusId}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
-          <input type="number" step="0.01" min="0.00" max="4.0" name="gpa" onChange={(e) => handleChange(e)} value={student.gpa} />
+          <input type="number" step="0.01" min="0.00" max="4.0" name="gpa" onChange={(e) => handleChange(e)} defaultValue={props.student.gpa} />
           <br/>
           <br/>
 
