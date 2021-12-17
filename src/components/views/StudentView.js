@@ -7,6 +7,8 @@ const StudentView = (props) => {
       <h1>{student.firstname + " " + student.lastname}</h1>
       <img src={student.imageUrl} alt="Student"/>
       <br></br>
+      <p>{student.email}</p>
+      <p>GPA: {student.gpa}</p>
       {student.campus != null &&
       <Link to={`/campus/${student.campus.id}`}>
         {student.campus.name}
