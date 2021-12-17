@@ -40,8 +40,6 @@ class EditStudentContainer extends Component {
             campusId: this.state.campusId,
             id: window.location.pathname.slice(-1)
         };
-        
-        console.log(editedStudent.firstname);
 
         await this.props.editStudent(editedStudent);
 
