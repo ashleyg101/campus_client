@@ -13,6 +13,7 @@ class NewStudentContainer extends Component {
           firstname: "", 
           lastname: "", 
           email: "",
+          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePoVhTeaks5ESIWqL34k8BOO9Wh6UZdZECw&usqp=CAU",
           gpa: 0,
           campusId: null, 
           redirect: false, 
@@ -33,6 +34,7 @@ class NewStudentContainer extends Component {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,
+            imageUrl: this.state.imageUrl,
             gpa: this.state.gpa,
             campusId: this.state.campusId
         };
@@ -43,6 +45,7 @@ class NewStudentContainer extends Component {
           firstname: "", 
           lastname: "", 
           email: "",
+          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePoVhTeaks5ESIWqL34k8BOO9Wh6UZdZECw&usqp=CAU",
           gpa: 0,
           campusId: null, 
           redirect: true, 
