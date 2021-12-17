@@ -32,7 +32,7 @@ const useStyles = makeStyles( () => ({
   
 }));
 
-const NewStudentView = (props) => {
+const EditStudentView = (props) => {
   const { handleChange, handleSubmit } = props;
   const classes = useStyles();
 
@@ -41,32 +41,32 @@ const NewStudentView = (props) => {
       <div className={classes.formContainer}>
         <div className={classes.formTitle}>
           <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-            New Student
+            Edit Student
           </Typography>
         </div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
           <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-          <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+          <input type="text" name="firstname" onChange ={(e) => handleChange(e)} defaultValue={props.student.firstname}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-          <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
+          <input type="text" name="lastname" onChange={(e) => handleChange(e)} defaultValue={props.student.lastname}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-          <input type="email" name="email" onChange={(e) => handleChange(e)} />
+          <input type="email" name="email" onChange={(e) => handleChange(e)} defaultValue={props.student.email}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>campusId: </label>
-          <input type="text" name="campusId" onChange={(e) => handleChange(e)} />
+          <input type="text" name="campusId" onChange={(e) => handleChange(e)} defaultValue={props.student.campusId}/>
           <br/>
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
-          <input type="number" step="0.01" min="0.00" max="4.0" name="gpa" onChange={(e) => handleChange(e)} />
+          <input type="number" step="0.01" min="0.00" max="4.0" name="gpa" onChange={(e) => handleChange(e)} defaultValue={props.student.gpa} />
           <br/>
           <br/>
 
@@ -87,4 +87,4 @@ const NewStudentView = (props) => {
   )
 }
 
-export default NewStudentView;
+export default EditStudentView;

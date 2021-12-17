@@ -1,25 +1,28 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { EditStudentView } from '../views';
+import { addStudentThunk, fetchStudentThunk, editStudentThunk, deleteStudentThunk } from '../../store/thunks';
 
-import NewStudentView from '../views/NewStudentView';
-import { addStudentThunk, editStudentThunk } from '../../store/thunks';
-
-
-class NewStudentContainer extends Component {
+class EditStudentContainer extends Component {
     constructor(props){
         super(props);
-        this.state = {
-          firstname: "", 
+        this.state =
+        {
+          firstname: "",
           lastname: "", 
           email: "",
-          gpa: 0,
+          gpa: 0.0,
           campusId: null, 
           redirect: false, 
           redirectId: null
         };
     }
 
+    componentDidMount() {
+        this.props.fetchStudent(window.location.pathname.slice(-1));
+    }
+ 
     handleChange = event => {
       this.setState({
         [event.target.name]: event.target.value
@@ -29,15 +32,18 @@ class NewStudentContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
 
-        let student = {
+        let editedStudent = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,
             gpa: this.state.gpa,
-            campusId: this.state.campusId
+            campusId: this.state.campusId,
+            id: window.location.pathname.slice(-1)
         };
         
-        let newStudent = await this.props.addStudent(student);
+        console.log(editedStudent.firstname);
+
+        await this.props.editStudent(editedStudent);
 
         this.setState({
           firstname: "", 
@@ -46,7 +52,7 @@ class NewStudentContainer extends Component {
           gpa: 0,
           campusId: null, 
           redirect: true, 
-          redirectId: newStudent.id
+          redirectId: window.location.pathname.slice(-1)
         });
     }
 
@@ -59,7 +65,11 @@ class NewStudentContainer extends Component {
           return (<Redirect to={`/student/${this.state.redirectId}`}/>)
         }
         return (
-          <NewStudentView 
+          <EditStudentView 
+            student={this.props.student}
+            editStudent={this.props.editStudent}
+            deleteStudent={this.props.deleteStudent}
+            fetchStudent={this.props.fetchStudent}
             handleChange = {this.handleChange} 
             handleSubmit={this.handleSubmit}      
           />
@@ -67,11 +77,22 @@ class NewStudentContainer extends Component {
     }
 }
 
+// map state to props
+const mapState = (state) => {
+    return {
+      student: state.student,
+    };
+  };
+
+
+// map dispatch to props
 const mapDispatch = (dispatch) => {
     return({
-        addStudent: (student) => dispatch(addStudentThunk(student)),
         editStudent: (student) => dispatch(editStudentThunk(student)),
+        fetchStudent: (student) => dispatch(fetchStudentThunk(student)),
+        deleteStudent: (student) => dispatch(deleteStudentThunk(student)),
+        addStudent: (student) => dispatch(addStudentThunk(student)),
     })
 }
 
-export default connect(null, mapDispatch)(NewStudentContainer);
+export default connect(mapState, mapDispatch)(EditStudentContainer);
