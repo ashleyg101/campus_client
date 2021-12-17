@@ -10,6 +10,8 @@ const AllStudentsView = (props) => {
       <Link to={`newstudent`}>
         <button>Add New Student</button>
       </Link>
+      <br/>
+      <Link to={`/`}><button>Back to Home</button></Link>
     </div>
     );
   }
@@ -23,7 +25,7 @@ const AllStudentsView = (props) => {
           <Link to={`/student/${student.id}`}>
             <h1>{name}</h1>
           </Link>
-          <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
+          <button onClick={() => deleteStudent(student.id)}> X </button>
           </div>
         );
       }
