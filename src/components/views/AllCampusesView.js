@@ -1,8 +1,17 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles( () => ({
+  image:{  
+    width: '500px',
+    height: '400px'
+  }
+}));
 
 const AllCampusesView = (props) => {
   const {campus, deleteCampus} = props;
+  const classes = useStyles();
   if (!props.allCampuses.length) {
     return (
     <div>
@@ -21,7 +30,8 @@ const AllCampusesView = (props) => {
           <Link to={`/campus/${campus.id}`}>
             <h1>{campus.name}</h1>
           </Link>
-          <p>{campus.description}</p>
+          <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
+          <h3>{campus.description}</h3>
           <p>{campus.address}</p>
           <button onClick={() => deleteCampus(campus.id)}>X</button>
         </div>
