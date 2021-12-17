@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
 
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles( () => ({
+  image:{  
+    width: '500px',
+    height: '400px'
+  }
+  
+}));
 const CampusView = (props) => {
   const {campus, deleteCampus, deleteStudent} = props;
-  
+  const classes = useStyles();
+
   if (!campus.students.length) {
     return (
     <div>
       <h1>{campus.name}</h1>
-      <img src={campus.imageUrl} alt="Campus"/>
+      <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
       <p>{campus.description}</p>
       <h3>There are no students at this campus.</h3>
       <Link to={`/campuses`}>
@@ -24,7 +34,7 @@ const CampusView = (props) => {
   return (
     <div>      
       <h1>{campus.name}</h1>
-      <img src={campus.imageUrl} alt="Campus"/>
+      <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
       <p>{campus.description}</p>
       <p>{campus.address}</p>
       <ul>
