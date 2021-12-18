@@ -68,7 +68,6 @@ const StudentView = (props) => {
         </Toolbar>
       </AppBar>
       
-      <div className={classes.greeting}><h1>Home Page</h1></div>
 
       <h1>{student.firstname + " " + student.lastname}</h1>
       <img src={student.imageUrl} alt="Student profile" className={classes.image}/>

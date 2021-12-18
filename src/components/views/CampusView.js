@@ -89,6 +89,32 @@ const CampusView = (props) => {
   }
   return (
     <div>      
+      <AppBar position="static" elevation={0} className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" className={classes.title} color="inherit" >
+            StudentFinder
+          </Typography>
+
+          <Link className={classes.links} to={'/campuses'} >
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              All Campuses
+            </Button>
+          </Link>
+
+          <Link className={classes.links} to={'/students'} >
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              All Students
+            </Button>
+          </Link>
+
+          <Link className={classes.links} to={'/'} >
+            <Button variant="contained" color="primary">
+              Home
+            </Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+
       <h1>{campus.name}</h1>
       <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
       <p>{campus.description}</p>
