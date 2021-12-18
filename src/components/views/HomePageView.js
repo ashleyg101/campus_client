@@ -42,7 +42,7 @@ const HomePageView = () => {
       <AppBar position="static" elevation={0} className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title} color="inherit" >
-            CRUD App
+            StudentFinder
           </Typography>
 
           <Link className={classes.links} to={'/campuses'} >
