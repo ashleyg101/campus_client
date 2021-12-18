@@ -45,7 +45,7 @@ const EditCampusView = (props) => {
         </div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
           <label style= {{color:'#11153e', fontWeight: 'bold'}}>Campus Name:</label>
-          <input type="text" name="name" onChange ={(e) => handleChange(e)} defaultValue={props.campus.name}/>
+          <input type="text" name="name" onChange ={(e) => handleChange(e)} defaultValue={props.campus.name} required/>
           <br/>
           <br/>
 
@@ -55,7 +55,7 @@ const EditCampusView = (props) => {
           <br/>
 
           <label style={{color:'#11153e', fontWeight: 'bold'}}>Address: </label>
-          <input type="text" name="address" onChange={(e) => handleChange(e)} defaultValue={props.campus.address}/>
+          <input type="text" name="address" onChange={(e) => handleChange(e)} defaultValue={props.campus.address} required/>
           <br/>
           <br/>
 
