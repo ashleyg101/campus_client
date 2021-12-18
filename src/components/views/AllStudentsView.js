@@ -70,8 +70,6 @@ const AllStudentsView = (props) => {
       <Link to={`newstudent`}>
         <button>Add New Student</button>
       </Link>
-      <br/>
-      <Link to={`/`}><button>Back to Home</button></Link>
       </div>
 
     );
@@ -117,8 +115,6 @@ const AllStudentsView = (props) => {
         <button>Add New Student</button>
       </Link>
       <br/>
-      <br/>
-      <Link to={`/`}><button>Back to Home</button></Link>
       </div>
   );
 };

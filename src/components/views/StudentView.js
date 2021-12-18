@@ -93,10 +93,6 @@ const StudentView = (props) => {
       <Link to={`/students`}>
       <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
       </Link>
-      <br/>
-      <Link to={`/students`}><button>Back to All Students</button></Link>
-      <br/>
-      <Link to={`/`}><button>Back to Home</button></Link>
     </div>
   );
 };

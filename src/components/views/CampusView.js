@@ -84,11 +84,7 @@ const CampusView = (props) => {
       <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
       </Link>
       <br/>
-      <br/>
-      <Link to={`/campuses`}><button>Back to All Campuses</button></Link>
-      <br/>
-      <Link to={`/`}><button>Back to Home</button></Link>
-    </div>
+   </div>
     )
   }
   return (
@@ -123,11 +119,7 @@ const CampusView = (props) => {
       <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
       </Link>
       <br/>
-      <br/>
-      <Link to={`/campuses`}><button>Back to All Campuses</button></Link>
-      <br/>
-      <Link to={`/`}><button>Back to Home</button></Link>
-    </div>
+   </div>
   );
 
 };
