@@ -21,7 +21,7 @@ const CampusView = (props) => {
       <h3>{campus.description}</h3>
       <p>There are no students at this campus.</p>
       <br/>
-      <Link to={`/editcampus` + `/` + campus.id}>
+      <Link to={`/editcampus/` + campus.id}>
       <button>Edit Campus</button>
       </Link>
       <br/>
@@ -60,7 +60,7 @@ const CampusView = (props) => {
         );
       })}
       </ul>
-      <Link to={`/editcampus` + `/` + campus.id}>
+      <Link to={`/editcampus/` + campus.id}>
         <button>Edit Campus</button>
       </Link>
       <br/>
