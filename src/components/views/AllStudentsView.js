@@ -27,6 +27,7 @@ const AllStudentsView = (props) => {
   
   return (
     <div>
+      <h1>ALL STUDENTS</h1>
       {students.map((student) => {
         let name = student.firstname + " " + student.lastname;
         return (

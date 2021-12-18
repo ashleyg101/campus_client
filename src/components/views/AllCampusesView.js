@@ -27,6 +27,7 @@ const AllCampusesView = (props) => {
 
   return (
     <div>
+      <h1>ALL CAMPUSES</h1>
       {props.allCampuses.map((campus) => (
         <div key={campus.id}>
           <Link to={`/campus/${campus.id}`}>
