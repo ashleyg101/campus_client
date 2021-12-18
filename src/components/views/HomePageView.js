@@ -31,8 +31,14 @@ const useStyles = makeStyles(theme => ({
   },
   links:{
     textDecoration: 'none',
+  },
+  image: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    width: "50%",
+    margin: "auto",
   }
-
 }));
 
 const HomePageView = () => {
@@ -60,6 +66,7 @@ const HomePageView = () => {
       </AppBar>
       
       <div className={classes.greeting}><h1>Home Page</h1></div>
+      <img src="https://bha.aspirepublicschools.org/wp-content/uploads/sites/8/2017/10/college.jpg" alt="college" className={classes.image}/>
     </div>
   );    
 }
