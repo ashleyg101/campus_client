@@ -32,7 +32,6 @@ const useStyles = makeStyles(theme => ({
   links:{
     textDecoration: 'none',
   }
-
 }));
 
 const HomePageView = () => {
