@@ -30,7 +30,7 @@ class NewCampusContainer extends Component {
 
         let campus = {
             name: this.state.name,
-            imageUrl: this.state.imageURL,
+            imageUrl: "https://www.thoughtco.com/thmb/jfIJE14e4c4SbCw2ozOiTijzijQ=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/swarthmore-college-Eric-Behrens-flickr-5706ffe35f9b581408d48cb3.jpg",
             address: this.state.address,
             description: this.state.description,
         };
